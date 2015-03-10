@@ -11,15 +11,20 @@ angular
     });
 
     $scope.save_todo = function(new_title) {
-      $scope.todos.push({
+      var new_todo = {
+        _id : "unassigned",
         title : new_title,
         completed : false
-      });
+      };
+      
+      $scope.todos.push(new_todo);
 
       $scope.new_todo = ""; // clear the input
 
       // save to db
-      TodoService.create({ title : new_title });
+      TodoService.create({ title : new_title }).then(function (response) {
+        new_todo._id = response.data._id;
+      });
     };
 
     $scope.enter_saves = function($event) {
