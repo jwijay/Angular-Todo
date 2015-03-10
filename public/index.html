@@ -9,8 +9,8 @@
   <div ng-controller="TodoController">
     <h1>Todo App</h1>
   
-    <input type="text" ng-model="new_todo" ng-keypress="enter_saves($event)">
-    <button ng-click="save_todo(new_todo)">Add</button>
+    <input type="text" ng-model="todo_title_input" ng-keypress="enter_saves($event)">
+    <button ng-click="save_todo(todo_title_input)">Add</button>
 
     <label for="search_input">Search: </label>
     <input type="text" id="search_input" ng-model="searchQuery">

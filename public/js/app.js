@@ -19,7 +19,7 @@ angular
       
       $scope.todos.push(new_todo);
 
-      $scope.new_todo = ""; // clear the input
+      $scope.todo_title_input = ""; // clear the input
 
       // save to db
       TodoService.create({ title : new_title }).then(function (response) {
@@ -29,7 +29,7 @@ angular
 
     $scope.enter_saves = function($event) {
       if ($event.keyCode == 13) { // enter key
-        $scope.save_todo( $scope.new_todo );
+        $scope.save_todo( $scope.todo_title_input );
       }
     };
 
