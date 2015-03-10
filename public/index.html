@@ -26,6 +26,7 @@
       <!-- <li ng-repeat="todo in todos | filter:searchQuery:completed_filter"> -->
       <li ng-repeat="todo in todos | filter:searchQuery">
         <input type="checkbox" ng-checked="todo.completed" ng-click="toggle_completed($event, todo._id)">
+        <button ng-click="delete(todo)">x</button>
         <span class="title">{{todo.title}}</span>
 
       </li>

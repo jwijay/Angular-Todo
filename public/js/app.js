@@ -37,4 +37,10 @@ angular
       }
     };
 
+    // on button click
+    $scope.delete = function( todo ) {
+      $scope.todos.splice($scope.todos.indexOf(todo), 1);
+      TodoService.delete(todo._id);
+    };
+
   }]);

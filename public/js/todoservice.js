@@ -24,4 +24,8 @@ angular
       return $http.put('/api/' + todo_id + '/uncomplete'); // returns promise
     };
 
+    this.delete = function (todo_id) {
+      return $http.delete('/api/' + todo_id); // returns promise
+    };
+
   }]);
